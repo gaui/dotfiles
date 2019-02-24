@@ -1,0 +1,24 @@
+[user]
+    email = gudjonj@gmail.com
+    name = Gudjon Jonsson
+[alias]
+    lg = log --decorate --graph --pretty=format:'%C(auto)%h%C(reset) -%C(auto)%d%C(reset) %s %C(dim magenta)(%cr)%C(reset) %C(dim magenta)<%an>%C(reset)' --abbrev-commit
+    pullc = !git pull origin $(git symbolic-ref --short HEAD)
+    pushc = !git push origin $(git symbolic-ref --short HEAD)
+    current = symbolic-ref --short HEAD
+    conflicts = diff --name-only --diff-filter=U
+    branches = for-each-ref --sort=-committerdate refs/heads/ --format='%(color:yellow)%(committerdate:short)%(color:reset) %(authorname) %(color:bold blue)%(refname:short)%(color:reset)'
+    stats = shortlog -s -n
+    recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format='%(refname:short) %(committerdate:relative)'
+    which = !sh -c 'git branch | grep -v $(git symbolic-ref --short HEAD) | grep -i $0'
+    lucky = !sh -c 'git checkout $(git which $0 | shuf | head -n 1)'
+    standup = !git lg --all --since='9am yesterday'
+    s = status -sb
+[include]
+[push]
+    default = current
+[core]
+    editor = vim
+    pager = "less -F -X"
+[merge]
+    tool = code
