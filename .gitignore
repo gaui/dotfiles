@@ -1,0 +1,7 @@
+/*
+*.session
+!.bashrc
+!.bashrc.d/
+!.vimrc
+!.gitconfig
+!.gitignore
