@@ -1,5 +1,6 @@
 /*
 *.session
+!.profile
 !.bashrc
 !.bashrc.d/
 !.vimrc
