@@ -23,3 +23,5 @@
     pager = "less -F -X"
 [merge]
     tool = code
+[pull]
+    rebase = false
